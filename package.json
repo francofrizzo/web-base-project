@@ -2,7 +2,7 @@
   "name": "web-base",
   "version": "1.0.0",
   "description": "Basic framework to develop Express + Vue + Typescript app",
-  "main": "dist/App.js",
+  "main": "dist/server/app.js",
   "scripts": {
     "clean": "rimraf dist",
     "build:server": "tsc -p server",
@@ -11,8 +11,8 @@
     "watch:build:server": "tsc --watch -p server",
     "watch:build:browser": "webpack --watch --config=web/webpack.config.js",
     "watch:build": "run-p watch:build:server watch:build:browser",
-    "watch:app": "nodemon './dist/server/App.js' --watch './dist/server'",
-    "app": "node './dist/server/App.js'",
+    "watch:app": "nodemon './dist/server/app.js' --watch './dist/server'",
+    "app": "node './dist/server/app.js'",
     "start": "npm-run-all clean build watch:app --print-label"
   },
   "author": "Franco Frizzo",

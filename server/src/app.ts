@@ -4,8 +4,9 @@ import bodyParser from "body-parser";
 import { join as pathJoin } from "path";
 import moment from "moment";
 
-import config from "./Config";
-import { synchronizeDatabase } from "./Models";
+import config from "./config";
+import { synchronizeDatabase } from "./models";
+import apiRouter from "./api";
 
 // Set moment locale
 moment.locale("es-AR");
@@ -36,6 +37,8 @@ export const server = {
 
     app.use("/", express.static(pathJoin(__dirname, "../../web/static")));
     app.use("/bundle", express.static(pathJoin(__dirname, "../web")));
+
+    app.use("/api", apiRouter);
 
     app.get("/", (req, res) => res.render("main.ejs", { ...this.defaultViewProperties }));
 
