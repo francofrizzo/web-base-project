@@ -5,19 +5,23 @@ import { join as pathJoin } from "path";
 import moment from "moment";
 
 import config from "./Config";
+import { synchronizeDatabase } from "./Models";
 
 // Set moment locale
 moment.locale("es-AR");
 
-const defaultProperties = {
-  title: config.title,
-  basepath: config.basepath,
-};
-
 export const server = {
+  config,
+  defaultViewProperties: {
+    title: config.title,
+    basepath: config.basepath,
+  },
+  initializeDatabase: async () => {
+    await synchronizeDatabase();
+  },
   start: async function(): Promise<void> {
     const app = express();
-    const port = config.port;
+    const port = this.config.port;
 
     app.set("views", pathJoin(__dirname, "../../web/views"));
     app.set("view engine", "ejs");
@@ -33,11 +37,11 @@ export const server = {
     app.use("/", express.static(pathJoin(__dirname, "../../web/static")));
     app.use("/bundle", express.static(pathJoin(__dirname, "../web")));
 
-    app.get("/", (req, res) => res.render("main.ejs", { ...defaultProperties }));
+    app.get("/", (req, res) => res.render("main.ejs", { ...this.defaultViewProperties }));
 
-     app.listen(port, () => console.log(`Listening on port ${port}`));
+    app.listen(port, () => console.log(`Listening on port ${port}`));
   },
 }
 
-server.start()
-
+server.initializeDatabase();
+server.start();

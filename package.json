@@ -35,6 +35,8 @@
     "precss": "^4.0.0",
     "rimraf": "^2.6.2",
     "sass-loader": "^8.0.2",
+    "sequelize": "^5.21.9",
+    "sqlite3": "^4.2.0",
     "ts-loader": "^7.0.4",
     "typescript": "^3.9.2",
     "vue": "^2.6.11",
@@ -44,9 +46,11 @@
     "webpack": "^4.43.0"
   },
   "devDependencies": {
+    "@types/bluebird": "^3.5.30",
     "@types/body-parser": "^1.17.0",
     "@types/express": "^4.17.0",
     "@types/express-session": "^1.17.0",
+    "@types/validator": "^13.0.0",
     "webpack-cli": "^3.3.11"
   },
   "keywords": []
