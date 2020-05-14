@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "rootDir": "server",
+    "sourceMap": true,
+    "outDir": "dist/server",
+    "strict": true,
+    "noImplicitAny": true,
+    "plugins": [
+      {
+        "name": "typescript-tslint-plugin",
+        "configFile": "./tslint.json"
+      }
+    ],
+  },
+  "include": [
+    "./server/*",
+    "./server/**/*"
+  ]
+}

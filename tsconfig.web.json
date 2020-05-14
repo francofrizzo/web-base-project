@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    // this aligns with Vue's browser support
+    "target": "es6",
+    // this enables stricter inference for data properties on `this`
+    "strict": true,
+    // if using webpack 2+ or rollup, to leverage tree shaking:
+    "module": "es2015",
+    "moduleResolution": "node",
+    "rootDir": "web/src",
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "plugins": [
+    {
+      "name": "typescript-tslint-plugin",
+      "configFile": "./tslint.json"
+    }
+    ],
+    "lib": ["dom", "es2015.promise", "es5"]
+  },
+  "include": [
+    "./web/src/*",
+    "./web/src/**/*"
+  ]
+}
+  
