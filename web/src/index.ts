@@ -3,6 +3,9 @@ import Vue from "vue";
 import BootstrapVue from "bootstrap-vue";
 Vue.use(BootstrapVue);
 
+// Vue plugins
+import store from "./store";
+
 // Vue app
 import MainApp from "./Main.vue";
 
@@ -23,6 +26,7 @@ declare global {
 const vm = new Vue({
   el: "#app",
   template: "<main-app></main-app>",
+  store,
   components: {
     MainApp,
   },
