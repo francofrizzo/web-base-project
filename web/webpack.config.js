@@ -9,7 +9,7 @@ const VueLoaderPlugin = require('vue-loader/lib/plugin');
 module.exports = {
   entry: "./web/src/index.ts",
   output: {
-    path: path.resolve(__dirname, "dist/web"),
+    path: path.resolve(__dirname, "../dist/web"),
     filename: "bundle.js",
   },
   module: {
@@ -19,7 +19,7 @@ module.exports = {
         exclude: /node_modules/,
         loader: 'ts-loader',
         options: {
-          configFile: 'tsconfig.web.json',
+          configFile: 'tsconfig.json',
           appendTsSuffixTo: [/\.vue$/],
         },
       },

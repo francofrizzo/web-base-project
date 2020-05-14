@@ -7,7 +7,7 @@
     // if using webpack 2+ or rollup, to leverage tree shaking:
     "module": "es2015",
     "moduleResolution": "node",
-    "rootDir": "web/src",
+    "rootDir": "src",
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "plugins": [
@@ -19,8 +19,8 @@
     "lib": ["dom", "es2015.promise", "es5"]
   },
   "include": [
-    "./web/src/*",
-    "./web/src/**/*"
+    "./src/*",
+    "./src/**/*"
   ]
 }
   
